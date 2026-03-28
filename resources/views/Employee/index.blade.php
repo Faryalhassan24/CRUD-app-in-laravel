@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Records</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+</head>
+
+<body>
+
+    <h1 class="text-danger text-center my-4">Employee Records</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                
+    <table class="table table-bordered text-center table-striped table-hover">
+
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Destination</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach ($employee as $emp)
+            <tr>
+                <td>{{ $emp->id }}</td>
+                <td>{{ $emp->name }}</td>
+                <td>{{ $emp->gender }}</td>
+                <td>{{ $emp->age }}</td>
+                <td>{{ $emp->destination }}</td>
+                <td></td>
+            </tr>
+        @endforeach
+    </tbody>
+
+</table>
+                
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 (no jQuery needed) -->
+    <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>
