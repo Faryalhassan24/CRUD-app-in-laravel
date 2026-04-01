@@ -26,7 +26,7 @@
 </a>
 <br><br>
 
-                
+        @include('Alerts.message')        
     <table class="table table-bordered text-center table-striped table-hover">
 
     <thead class="table-dark">
