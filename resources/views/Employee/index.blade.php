@@ -36,7 +36,7 @@
             <th>Gender</th>
             <th>Age</th>
             <th>designation</th>
-            <th>Action</th>
+            <th colspan="2">Action</th>
         </tr>
     </thead>
 
@@ -48,7 +48,16 @@
                 <td>{{ $emp->gender }}</td>
                 <td>{{ $emp->age }}</td>
                 <td>{{ $emp->designation }}</td>
-                <td></td>
+                <td><a class="btn btn-warning btn-sm" href="{{ route('employee.edit', $emp->id) }}">Edit</a>
+
+                <td> <form action="{{ route('employee.destroy', $emp->id) }}" method="POST"> 
+                    @csrf 
+                    @method('DELETE') 
+                <button type="submit" class="btn btn-danger btn-sm" 
+                onclick="return confirm('Are you sure you want to delete this record?')"> Delete
+                     </button>
+                    </form>
+                 </td>
             </tr>
         @endforeach
     </tbody>

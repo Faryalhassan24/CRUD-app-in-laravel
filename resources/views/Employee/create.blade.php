@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body>
-    <h3 class="text-center text-primary mt-5">Add new Employee</h3> <br> <br>
+    <h3 class="text-center text-success mt-5">Add new Employee</h3> <br> <br>
 
     <div class="container">
         <div class="row">

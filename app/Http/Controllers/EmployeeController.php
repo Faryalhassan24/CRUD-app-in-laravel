@@ -52,7 +52,7 @@ class EmployeeController extends Controller
      */
     public function show(string $id)
     {
-        //
+       
     }
 
     /**
@@ -60,7 +60,8 @@ class EmployeeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+         $emp= Employee::find($id);
+         return view('Employee.update')->with('emp',$emp);
     }
 
     /**
@@ -68,7 +69,13 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $emp = Employee::Find($id);
+        $emp->name =$request->input('name');
+        $emp->gender =$request->input('gender');
+        $emp->age =$request->input('age');
+        $emp->designation =$request->input('designation');
+        $emp->save();
+       return redirect('/employee')->with('update_Message','Data has been updated successfully.');
     }
 
     /**
@@ -76,6 +83,8 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $emp = Employee::find($id);
+        $emp->delete();
+        return redirect('/employee')->with('delete_Message','Data has been delete successfully.');
     }
 }
