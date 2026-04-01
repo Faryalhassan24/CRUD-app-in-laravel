@@ -18,6 +18,14 @@
         <div class="row">
             <div class="col-12">
 
+{{-- <a href="{{ action([\App\Http\Controllers\EmployeeController::class, 'create']) }}" class="btn btn-outline-info">
+    Add new Employee
+</a> --}}
+<a href="{{ route('employee.create') }}" class="btn btn-outline-info">
+    Add new Employee
+</a>
+<br><br>
+
                 
     <table class="table table-bordered text-center table-striped table-hover">
 
@@ -27,7 +35,7 @@
             <th>Name</th>
             <th>Gender</th>
             <th>Age</th>
-            <th>Destination</th>
+            <th>designation</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -39,7 +47,7 @@
                 <td>{{ $emp->name }}</td>
                 <td>{{ $emp->gender }}</td>
                 <td>{{ $emp->age }}</td>
-                <td>{{ $emp->destination }}</td>
+                <td>{{ $emp->designation }}</td>
                 <td></td>
             </tr>
         @endforeach
